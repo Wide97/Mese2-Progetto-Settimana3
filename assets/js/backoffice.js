@@ -1,12 +1,13 @@
-const cardId = new URLSearchParams(location.search).get('cardId')
-console.log('CARDID', cardId)
+const cardId = new URLSearchParams(location.search).get('cardId');
+console.log('CARDID', cardId);
 
 if (cardId) {
-  fetch('https://striveschool-api.herokuapp.com/api/product/' + cardId) , {
+  fetch('https://striveschool-api.herokuapp.com/api/product/' + cardId, {
     headers: {
-    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmEzNjZjOWYyNjBjYzAwMTVjYzBkZmYiLCJpYXQiOjE3MjE5ODQ3MTMsImV4cCI6MTcyMzE5NDMxM30.I3DxQ3DSOoZgqHELivC9OIeUEaagyAmOZ2PCMKFHUGk"
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmEzNjZjOWYyNjBjYzAwMTVjYzBkZmYiLCJpYXQiOjE3MjE5ODQ3MTMsImV4cCI6MTcyMzE5NDMxM30.I3DxQ3DSOoZgqHELivC9OIeUEaagyAmOZ2PCMKFHUGk"
+      
     }
-}
+  })
     .then((response) => {
       if (response.ok) {
         return response.json()
@@ -85,6 +86,7 @@ cardForm.addEventListener('submit', function (e) {
     
     body: JSON.stringify(newCard), 
     headers: {
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmEzNjZjOWYyNjBjYzAwMTVjYzBkZmYiLCJpYXQiOjE3MjE5ODQ3MTMsImV4cCI6MTcyMzE5NDMxM30.I3DxQ3DSOoZgqHELivC9OIeUEaagyAmOZ2PCMKFHUGk",
       'Content-Type': 'application/json',
     },
   })

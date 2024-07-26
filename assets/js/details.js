@@ -7,9 +7,9 @@ const agendaURL = 'https://striveschool-api.herokuapp.com/api/product/'
 
 fetch(agendaURL + cardId) , {
     headers: {
-    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmEzNjZjOWYyNjBjYzAwMTVjYzBkZmYiLCJpYXQiOjE3MjE5ODQ3MTMsImV4cCI6MTcyMzE5NDMxM30.I3DxQ3DSOoZgqHELivC9OIeUEaagyAmOZ2PCMKFHUGk"
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmEzNjZjOWYyNjBjYzAwMTVjYzBkZmYiLCJpYXQiOjE3MjE5ODQ3MTMsImV4cCI6MTcyMzE5NDMxM30.I3DxQ3DSOoZgqHELivC9OIeUEaagyAmOZ2PCMKFHUGk"
     }
-}
+  }
   .then((response)  => {
     if (response.ok) {
       return response.json()
@@ -47,6 +47,7 @@ fetch(agendaURL + cardId) , {
 
 const deleteCard = function () {
   fetch(agendaURL + cardId, {
+    
     method: 'DELETE',
   })
     .then((response) => {
