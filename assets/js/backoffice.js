@@ -3,7 +3,9 @@ console.log('CARDID', cardId)
 
 if (cardId) {
   fetch('https://striveschool-api.herokuapp.com/api/product/' + cardId) , {
+    headers: {
     "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmEzNjZjOWYyNjBjYzAwMTVjYzBkZmYiLCJpYXQiOjE3MjE5ODQ3MTMsImV4cCI6MTcyMzE5NDMxM30.I3DxQ3DSOoZgqHELivC9OIeUEaagyAmOZ2PCMKFHUGk"
+    }
 }
     .then((response) => {
       if (response.ok) {

@@ -1,7 +1,9 @@
 const getFootballer = function (){
     const URL= 'https://striveschool-api.herokuapp.com/api/product/'
     fetch (URL), {
+        headers: {
         "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmEzNjZjOWYyNjBjYzAwMTVjYzBkZmYiLCJpYXQiOjE3MjE5ODQ3MTMsImV4cCI6MTcyMzE5NDMxM30.I3DxQ3DSOoZgqHELivC9OIeUEaagyAmOZ2PCMKFHUGk"
+        }
     }
     .then((response)=> {
         console.log(response)
@@ -21,13 +23,12 @@ const getFootballer = function (){
                 <div class="col">
                     <div class="card">
                         <img
-                            src="https://uninuoro.it/wp-content/uploads/2018/08/aditya-chinchure-494048-unsplash.jpg"
+                            src="${card.img}"
                             class="card-img-top"
                             alt="card pic"
                         />
                         <div class="card-body text-center">
                             <h5 class="card-title">${card.name}</h5>
-                            <img src="${card.img}" alt="card"> 
                             <p class="card-text">${card.role}</p>
                             <p class="card-text">${card.team}</p>
                             <p class="card-text">${card.price}</p>
