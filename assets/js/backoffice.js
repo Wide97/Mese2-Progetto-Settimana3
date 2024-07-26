@@ -65,7 +65,7 @@ cardForm.addEventListener('submit', function (e) {
   )
 
   let methodToUse
-  if (eventId) {
+  if (cardId) {
     methodToUse = 'PUT'
   } else {
     methodToUse = 'POST'
@@ -74,8 +74,8 @@ cardForm.addEventListener('submit', function (e) {
   const URL = 'https://striveschool-api.herokuapp.com/api/product/'
 
   let URLToUse
-  if (eventId) {
-    URLToUse = URL + eventId
+  if (cardId) {
+    URLToUse = URL + cardId
   } else {
     URLToUse = URL
   }
