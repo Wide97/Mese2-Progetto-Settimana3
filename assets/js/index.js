@@ -14,4 +14,30 @@ const getFootballer = function (){
     .catch((error) =>{
         console.log ('errore', error)
     })
+    .then((arrayOfCards) =>{
+        console.log(arrayOfCards)
+        arrayOfCards.forEach((card) => {
+            const newCardCol = `
+                <div class="col">
+                    <div class="card">
+                        <img
+                            src="https://uninuoro.it/wp-content/uploads/2018/08/aditya-chinchure-494048-unsplash.jpg"
+                            class="card-img-top"
+                            alt="card pic"
+                        />
+                        <div class="card-body text-center">
+                            <h5 class="card-title">${card.name}</h5>
+                            <img src="${card.img}" alt="card"> 
+                            <p class="card-text">${card.role}</p>
+                            <p class="card-text">${card.team}</p>
+                            <p class="card-text">${card.price}</p>
+                            <a href="./details.html?cardId=${card._id}" class="btn btn-primary w-100">Vai ai dettagli</a>
+                        </div>
+                    </div>
+                </div>
+                `
+            const cardsRow = document.getElementById('cards-row')
+            cardsRow.innerHTML = cardsRow.innerHTML + newCardCol
+          })
+    })
 }
