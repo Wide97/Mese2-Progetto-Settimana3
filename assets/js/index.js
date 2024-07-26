@@ -1,23 +1,21 @@
-const getFootballer = function (){
-    const URL= 'https://striveschool-api.herokuapp.com/api/product/'
-    fetch (URL), {
+const getFootballer = function () {
+    const URL = 'https://striveschool-api.herokuapp.com/api/product/';
+    fetch(URL, {
         headers: {
-          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmEzNjZjOWYyNjBjYzAwMTVjYzBkZmYiLCJpYXQiOjE3MjE5ODQ3MTMsImV4cCI6MTcyMzE5NDMxM30.I3DxQ3DSOoZgqHELivC9OIeUEaagyAmOZ2PCMKFHUGk"
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmEzNjZjOWYyNjBjYzAwMTVjYzBkZmYiLCJpYXQiOjE3MjE5ODQ3MTMsImV4cCI6MTcyMzE5NDMxM30.I3DxQ3DSOoZgqHELivC9OIeUEaagyAmOZ2PCMKFHUGk"
         }
-      }
-    .then((response)=> {
-        console.log(response)
-        if(response.ok){
-            return response.json()
+    })
+    .then((response) => {
+        console.log(response);
+        if (response.ok) {
+            return response.json();
         } else {
-            throw new Error('errore nella chiamata');
+            throw new Error('Error in fetch call');
         }
     })
-    .catch((error) =>{
-        console.log ('errore', error)
-    })
-    .then((arrayOfCards) =>{
-        console.log(arrayOfCards)
+    .then((arrayOfCards) => {
+        console.log(arrayOfCards);
+        const cardsRow = document.getElementById('cards-row');
         arrayOfCards.forEach((card) => {
             const newCardCol = `
                 <div class="col">
@@ -36,9 +34,13 @@ const getFootballer = function (){
                         </div>
                     </div>
                 </div>
-                `
-            const cardsRow = document.getElementById('cards-row')
-            cardsRow.innerHTML = cardsRow.innerHTML + newCardCol
-          })
+            `;
+            cardsRow.innerHTML += newCardCol;
+        });
     })
+    .catch((error) => {
+        console.log('Error', error);
+    });
 }
+
+getFootballer();

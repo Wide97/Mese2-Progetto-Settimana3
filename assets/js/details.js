@@ -41,15 +41,15 @@ fetch('https://striveschool-api.herokuapp.com/api/product/' + cardId, {
 
             <div class="card pb-4">
 
-            <img src="${cardEvent.img}" class="card-img-top" alt="card">
+            <img src="${cardEvent.imageUrl}" class="card-img-top" alt="card">
 
             <div class="card-body">
 
                 <h5 class="card-title">${cardEvent.name}</h5>
 
-                <p class="card-text">${cardEvent.role}</p>
+                <p class="card-text">${cardEvent.description}</p>
 
-                <p class="card-text">${cardEvent.team}</p>
+                <p class="card-text">${cardEvent.brand}</p>
 
                 <a href="#" class="btn btn-primary">${cardEvent.price}€ COMPRA</a>
 
