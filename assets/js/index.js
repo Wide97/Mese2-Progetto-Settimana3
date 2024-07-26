@@ -19,7 +19,7 @@ const getFootballer = function () {
         arrayOfCards.forEach((card) => {
             const newCardCol = `
                 <div class="col my-3">
-                    <div class="card">
+                    <div class="card bg-success">
                         <img
                             src="${card.imageUrl}"
                             class="card-img-top custom-height"
