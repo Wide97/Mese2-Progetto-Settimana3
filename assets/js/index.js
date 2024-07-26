@@ -23,14 +23,14 @@ const getFootballer = function (){
                 <div class="col">
                     <div class="card">
                         <img
-                            src="${card.img}"
+                            src="${card.imageUrl}"
                             class="card-img-top"
                             alt="card pic"
                         />
                         <div class="card-body text-center">
                             <h5 class="card-title">${card.name}</h5>
-                            <p class="card-text">${card.role}</p>
-                            <p class="card-text">${card.team}</p>
+                            <p class="card-text">${card.description}</p>
+                            <p class="card-text">${card.brand}</p>
                             <p class="card-text">${card.price}</p>
                             <a href="./details.html?cardId=${card._id}" class="btn btn-primary w-100">Vai ai dettagli</a>
                         </div>
