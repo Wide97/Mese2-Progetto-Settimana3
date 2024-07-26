@@ -18,11 +18,11 @@ const getFootballer = function () {
         const cardsRow = document.getElementById('cards-row');
         arrayOfCards.forEach((card) => {
             const newCardCol = `
-                <div class="col">
+                <div class="col my-3">
                     <div class="card">
                         <img
                             src="${card.imageUrl}"
-                            class="card-img-top"
+                            class="card-img-top custom-height"
                             alt="card pic"
                         />
                         <div class="card-body text-center">
